@@ -5,6 +5,13 @@ const LOG_API_URL =
 
 async function log(stack, level, pkg, message) {
   try {
+    const token = process.env.ACCESS_TOKEN;
+
+    if (!token) {
+      console.error("❌ ACCESS_TOKEN is missing in .env");
+      return null;
+    }
+
     const response = await axios.post(
       LOG_API_URL,
       {
