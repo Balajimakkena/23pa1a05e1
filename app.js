@@ -31,7 +31,8 @@ app.use(async (req, res, next) => {
 /* ✅ ADD ROUTES HERE (IMPORTANT PLACE) */
 const depotRoutes = require("./routes/depotRoutes");
 app.use("/", depotRoutes);
-
+const vehicleRoutes = require("./routes/vehicleRoutes");
+app.use("/", vehicleRoutes);
 /* Test route */
 app.get("/", (req, res) => {
   res.send("Backend running 🚀");
